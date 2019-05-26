@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView textoResultado = findViewById(R.id.alterarNumero);
 
-        int numero = new Random().nextInt(50);
+        int numero = new Random().nextInt(80);
 
         textoResultado.setText("O número selecionado é: " + numero);
 
