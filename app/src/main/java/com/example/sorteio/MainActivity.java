@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -20,9 +20,28 @@ public class MainActivity extends AppCompatActivity {
 
         TextView textoResultado = findViewById(R.id.alterarNumero);
 
-        int numero = new Random().nextInt(10);
+        List<Integer> resultados = new ArrayList<>();
 
-        textoResultado.setText("O número selecionado é: " + numero);
+        for (int i = 0; i <= 5; i++) {
+            int numero = new Random().nextInt(59) + 1;
+            resultados.add(numero);
+            int tamanhoLista = resultados.size();
+
+            for (int j = 0; j <= tamanhoLista; j++) {
+                if (resultados.contains(numero)) {
+                    resultados.remove(numero);
+                    i--;
+
+                }
+
+            }
+
+        }
+
+        resultados.toString();
+        System.out.println(resultados);
+
+        textoResultado.setText("O número selecionado é: " + resultados);
 
     }
 
